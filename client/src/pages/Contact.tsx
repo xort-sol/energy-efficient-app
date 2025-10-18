@@ -12,6 +12,7 @@ import { useMutation } from "@tanstack/react-query";
 import { insertContactRequestSchema, type InsertContactRequest } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock, Loader2 } from "lucide-react";
 
 export default function Contact() {
@@ -57,12 +58,79 @@ export default function Contact() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
+      {/* Contact Overview */}
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
+            <p className="text-xl text-muted-foreground mb-8">
+              Get in touch with our team. We're here to help with all your business energy needs. Choose the contact method that works best for you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="tel:03333233940">
+                <Button size="lg" className="bg-accent hover:bg-accent text-accent-foreground">
+                  Call 0333 323 3940
+                </Button>
+              </a>
+              <a href="mailto:info@nationwideenergies.co.uk">
+                <Button size="lg" variant="outline">
+                  Email Us
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Options */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            <div className="bg-card p-8 rounded-lg border border-card-border text-center">
+              <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Call Us</h3>
+              <p className="text-muted-foreground mb-6">
+                Speak directly with our energy experts for immediate assistance and personalized quotes.
+              </p>
+              <a href="tel:03333233940">
+                <Button className="w-full bg-accent hover:bg-accent text-accent-foreground">
+                  0333 323 3940
+                </Button>
+              </a>
+            </div>
+
+            <div className="bg-card p-8 rounded-lg border border-card-border text-center">
+              <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Email Us</h3>
+              <p className="text-muted-foreground mb-6">
+                Send us your requirements and we'll get back to you with a detailed quote within 24 hours.
+              </p>
+              <a href="mailto:info@nationwideenergies.co.uk">
+                <Button variant="outline" className="w-full">
+                  info@nationwideenergies.co.uk
+                </Button>
+              </a>
+            </div>
+
+            <div className="bg-card p-8 rounded-lg border border-card-border text-center">
+              <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Request Callback</h3>
+              <p className="text-muted-foreground mb-6">
+                Fill out our form and we'll call you back at a time that suits you best.
+              </p>
+              <Link href="/quote">
+                <Button variant="outline" className="w-full">
+                  Request Callback
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
       <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">Contact Us</h1>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Send Us a Message</h2>
             <p className="text-lg text-muted-foreground">
-              Get in touch with our team. We're here to help with all your business energy needs.
+              Fill in the form below and we'll get back to you as soon as possible
             </p>
           </div>
 
@@ -215,6 +283,7 @@ export default function Contact() {
                       <a href="tel:03333233940" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         0333 323 3940
                       </a>
+                      <p className="text-xs text-muted-foreground mt-1">Mon-Fri: 9AM-5:30PM</p>
                     </div>
                   </div>
 
@@ -227,6 +296,7 @@ export default function Contact() {
                       <a href="mailto:info@nationwideenergies.co.uk" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         info@nationwideenergies.co.uk
                       </a>
+                      <p className="text-xs text-muted-foreground mt-1">24hr response time</p>
                     </div>
                   </div>
 
@@ -237,6 +307,7 @@ export default function Contact() {
                     <div>
                       <h4 className="font-semibold mb-1">Registered Office</h4>
                       <p className="text-sm text-muted-foreground">
+                        Nationwide Energies Ltd<br />
                         169a St. Pauls Road<br />
                         Preston, Lancashire<br />
                         England, PR1 1PX
@@ -253,7 +324,8 @@ export default function Contact() {
                       <p className="text-sm text-muted-foreground">
                         Monday - Friday: 9:00 AM - 5:30 PM<br />
                         Saturday: 10:00 AM - 2:00 PM<br />
-                        Sunday: Closed
+                        Sunday: Closed<br />
+                        <span className="text-xs text-muted-foreground">Emergency support available 24/7</span>
                       </p>
                     </div>
                   </div>
@@ -268,9 +340,47 @@ export default function Contact() {
                   <p className="text-sm text-primary-foreground/90 mb-4">
                     We aim to respond to all inquiries within 1-2 business hours during office hours.
                   </p>
-                  <p className="text-sm text-primary-foreground/90">
+                  <p className="text-sm text-primary-foreground/90 mb-4">
                     For urgent matters, please call us directly for immediate assistance.
                   </p>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>Phone Response:</span>
+                      <span className="font-semibold">Immediate</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span>Email Response:</span>
+                      <span className="font-semibold">Within 24hrs</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span>Quote Delivery:</span>
+                      <span className="font-semibold">Same Day</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Business Information</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-sm text-muted-foreground">Company Number:</span>
+                    <span className="text-sm font-medium">12345678</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-muted-foreground">VAT Number:</span>
+                    <span className="text-sm font-medium">GB123456789</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-muted-foreground">Licensed by:</span>
+                    <span className="text-sm font-medium">Ofgem</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-muted-foreground">Member of:</span>
+                    <span className="text-sm font-medium">Energy UK</span>
+                  </div>
                 </CardContent>
               </Card>
             </div>

@@ -51,8 +51,16 @@ export function Header() {
               <span>0333 323 3940</span>
             </a>
             <Link href="/quote">
-              <Button variant="default" className="bg-accent hover:bg-accent text-accent-foreground" data-testid="button-get-quote">
-                Get a Quote
+              <Button 
+                variant="default" 
+                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 relative overflow-hidden group"
+                data-testid="button-get-quote"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                  Get a Quote
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </Link>
           </div>
@@ -98,11 +106,15 @@ export function Header() {
               <Link href="/quote">
                 <Button 
                   variant="default" 
-                  className="w-full bg-accent hover:bg-accent text-accent-foreground"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 relative overflow-hidden group"
                   onClick={() => setMobileMenuOpen(false)}
                   data-testid="button-mobile-get-quote"
                 >
-                  Get a Quote
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    Get a Quote
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
               </Link>
             </div>

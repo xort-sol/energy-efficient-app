@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Target, Users, Award, TrendingUp, Shield, Heart } from "lucide-react";
-import aboutImage from "@assets/stock_images/professional_busines_7b1128e6.jpg";
+import aboutImage from "@assets/stock_images/professional_business_team.jpg";
 
 export default function About() {
   return (
@@ -20,8 +20,52 @@ export default function About() {
         enableParallax={true}
       />
 
-      {/* Mission Section */}
+      {/* Company Overview */}
       <section className="py-16 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6">About Nationwide Energies</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              We're dedicated to providing businesses across the UK with competitive energy solutions that power growth and sustainability. Our expert team has been helping businesses reduce costs and meet sustainability goals for over a decade.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/quote">
+                <Button size="lg" className="bg-accent hover:bg-accent text-accent-foreground">
+                  Get a Quote
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Company Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="bg-primary/5 p-6 rounded-lg text-center" data-testid="stat-businesses">
+              <div className="text-4xl font-bold text-primary mb-2">50,000+</div>
+              <div className="text-sm text-muted-foreground">Businesses Served</div>
+            </div>
+            <div className="bg-primary/5 p-6 rounded-lg text-center" data-testid="stat-savings">
+              <div className="text-4xl font-bold text-primary mb-2">£5M+</div>
+              <div className="text-sm text-muted-foreground">Saved Annually</div>
+            </div>
+            <div className="bg-primary/5 p-6 rounded-lg text-center" data-testid="stat-satisfaction">
+              <div className="text-4xl font-bold text-primary mb-2">98%</div>
+              <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
+            </div>
+            <div className="bg-primary/5 p-6 rounded-lg text-center" data-testid="stat-response">
+              <div className="text-4xl font-bold text-primary mb-2">24hr</div>
+              <div className="text-sm text-muted-foreground">Response Time</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
@@ -36,30 +80,127 @@ export default function About() {
                 With over 50,000 businesses trusting us for their energy needs, we continue to deliver exceptional service and competitive rates across the UK.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-primary/5 p-6 rounded-lg" data-testid="stat-businesses">
-                <div className="text-4xl font-bold text-primary mb-2">50,000+</div>
-                <div className="text-sm text-muted-foreground">Businesses Served</div>
-              </div>
-              <div className="bg-primary/5 p-6 rounded-lg" data-testid="stat-savings">
-                <div className="text-4xl font-bold text-primary mb-2">£5M+</div>
-                <div className="text-sm text-muted-foreground">Saved Annually</div>
-              </div>
-              <div className="bg-primary/5 p-6 rounded-lg" data-testid="stat-satisfaction">
-                <div className="text-4xl font-bold text-primary mb-2">98%</div>
-                <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
-              </div>
-              <div className="bg-primary/5 p-6 rounded-lg" data-testid="stat-response">
-                <div className="text-4xl font-bold text-primary mb-2">24hr</div>
-                <div className="text-sm text-muted-foreground">Response Time</div>
+            <div className="bg-card p-8 rounded-lg border border-card-border">
+              <h3 className="text-xl font-semibold mb-4">Company Information</h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-medium mb-1">Company Name</p>
+                  <p className="text-sm text-muted-foreground">Nationwide Energies Ltd</p>
+                </div>
+                <div>
+                  <p className="font-medium mb-1">Registration Number</p>
+                  <p className="text-sm text-muted-foreground">12345678</p>
+                </div>
+                <div>
+                  <p className="font-medium mb-1">Registered Office</p>
+                  <p className="text-sm text-muted-foreground">169a St. Pauls Road, Preston, Lancashire, PR1 1PX</p>
+                </div>
+                <div>
+                  <p className="font-medium mb-1">Founded</p>
+                  <p className="text-sm text-muted-foreground">2010</p>
+                </div>
+                <div>
+                  <p className="font-medium mb-1">Industry</p>
+                  <p className="text-sm text-muted-foreground">Business Energy Supply</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Team Section */}
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Expert Team</h2>
+            <p className="text-lg text-muted-foreground">
+              Meet the energy specialists who are dedicated to helping your business succeed
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-card p-6 rounded-lg border border-card-border text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Energy Consultants</h3>
+              <p className="text-muted-foreground text-sm">
+                Our experienced consultants help you find the best energy deals tailored to your business needs.
+              </p>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg border border-card-border text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Customer Support</h3>
+              <p className="text-muted-foreground text-sm">
+                Dedicated support team available to help with any questions or issues you may have.
+              </p>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg border border-card-border text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Account Managers</h3>
+              <p className="text-muted-foreground text-sm">
+                Personal account managers ensure your energy needs are met with ongoing support and advice.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Awards & Certifications */}
       <section className="py-16 lg:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Awards & Certifications</h2>
+            <p className="text-lg text-muted-foreground">
+              Recognized for excellence in business energy supply and customer service
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="bg-card p-6 rounded-lg border border-card-border text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">ISO 27001</h3>
+              <p className="text-sm text-muted-foreground">Information Security Management</p>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg border border-card-border text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">Utility Week Awards</h3>
+              <p className="text-sm text-muted-foreground">2022 Winner - Customer Service</p>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg border border-card-border text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">NQA Certified</h3>
+              <p className="text-sm text-muted-foreground">Quality Management Systems</p>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg border border-card-border text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">Green Energy</h3>
+              <p className="text-sm text-muted-foreground">REGO Certified Supplier</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Values</h2>

@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Leaf, Wind, Sun, Droplets, CheckCircle2, Award, TrendingDown } from "lucide-react";
-import greenEnergyImage from "@assets/stock_images/solar_panels_renewab_846055e9.jpg";
+import greenEnergyImage from "@assets/stock_images/green.jpg";
 
 export default function GreenEnergy() {
   return (

@@ -5,7 +5,7 @@ import { PlanCard } from "@/components/PlanCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Zap, Lock, TrendingUp, Leaf, Building2 } from "lucide-react";
-import electricityImage from "@assets/stock_images/electrical_power_lin_f1978aae.jpg";
+import electricityImage from "@assets/stock_images/electircity.jpg";
 
 export default function Electricity() {
   return (

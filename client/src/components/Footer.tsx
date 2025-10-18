@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <Logo className="mb-4" />
+            <Logo className="mb-4" variant="footer" />
             <p className="text-sm text-secondary-foreground/80 mb-4">
               Providing competitive business energy solutions for UK businesses. Get the best rates on electricity, gas, and water.
             </p>
