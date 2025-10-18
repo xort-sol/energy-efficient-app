@@ -5,6 +5,7 @@ import { PlanCard } from "@/components/PlanCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Flame, Lock, TrendingUp, Leaf, Shield } from "lucide-react";
+import gasImage from "@assets/stock_images/natural_gas_pipeline_c3e30f20.jpg";
 
 export default function Gas() {
   return (
@@ -13,10 +14,12 @@ export default function Gas() {
       
       <Hero
         title="Business Gas Suppliers"
-        description="Reliable business gas supply with competitive rates and transparent pricing. We provide flexible gas contracts tailored to your business needs."
+        description="Reliable business gas supply with competitive rates and transparent pricing. We provide flexible gas contracts tailored to your business needs, ensuring consistent supply and cost certainty."
         primaryCTA={{ text: "Get a Quote", href: "/quote" }}
         secondaryCTA={{ text: "Call 0333 323 3940", href: "tel:03333233940" }}
         badge="Competitive Gas Rates"
+        backgroundImage={gasImage}
+        enableParallax={true}
       />
 
       {/* Plans Section */}

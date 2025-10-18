@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Leaf, Wind, Sun, Droplets, CheckCircle2, Award, TrendingDown } from "lucide-react";
+import greenEnergyImage from "@assets/stock_images/solar_panels_renewab_846055e9.jpg";
 
 export default function GreenEnergy() {
   return (
@@ -12,10 +13,12 @@ export default function GreenEnergy() {
       
       <Hero
         title="Renewable Energy For Businesses"
-        description="Certified 100% renewable electricity and carbon neutral gas. Know that your electricity is 100% green, and offset your gas carbon emissions."
+        description="Certified 100% renewable electricity and carbon neutral gas. Know that your electricity is 100% green, and offset your gas carbon emissions. Join thousands of businesses making a positive environmental impact."
         primaryCTA={{ text: "Get a Quote", href: "/quote" }}
         secondaryCTA={{ text: "Learn More", href: "#benefits" }}
         badge="100% Renewable Energy"
+        backgroundImage={greenEnergyImage}
+        enableParallax={true}
       />
 
       {/* Why Choose Section */}

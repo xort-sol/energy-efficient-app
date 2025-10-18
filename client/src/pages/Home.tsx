@@ -5,7 +5,9 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ProcessStep } from "@/components/ProcessStep";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Zap, Flame, Droplet, Leaf, Phone, Building2, TrendingDown, Shield } from "lucide-react";
+import { Zap, Flame, Droplet, Leaf, Phone, Building2, TrendingDown, Shield, Award, Users, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import heroImage from "@assets/stock_images/modern_office_buildi_2f9701c6.jpg";
 
 export default function Home() {
   return (
@@ -19,47 +21,83 @@ export default function Home() {
         primaryCTA={{ text: "Get Your Quote", href: "/quote" }}
         secondaryCTA={{ text: "Learn More", href: "/about" }}
         badge="Best Prices Online"
+        backgroundImage={heroImage}
+        enableParallax={true}
       />
 
       {/* Services Overview */}
       <section className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Simplify and Save on Your Business Energy</h2>
             <p className="text-lg text-muted-foreground">
-              Request a callback, or tell us how much you spend on business energy per year and get a quote today.
+              Request a callback, or tell us how much you spend on business energy per year and get a quote today. We offer comprehensive energy solutions tailored to your business needs, from small startups to large enterprises.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard
-              icon={Zap}
-              title="Business Electricity"
-              description="Competitive electricity plans for businesses of all sizes with flexible contract lengths."
-              href="/electricity"
-              iconColor="bg-primary"
-            />
-            <ServiceCard
-              icon={Flame}
-              title="Business Gas"
-              description="Reliable gas supply with transparent pricing and exceptional customer service."
-              href="/gas"
-              iconColor="bg-accent"
-            />
-            <ServiceCard
-              icon={Droplet}
-              title="Business Water"
-              description="Streamlined water services for your business with competitive rates."
-              href="/water"
-              iconColor="bg-secondary"
-            />
-            <ServiceCard
-              icon={Leaf}
-              title="Green Energy"
-              description="100% renewable electricity and carbon-neutral gas to power your sustainable future."
-              href="/green-energy"
-              iconColor="bg-primary"
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <ServiceCard
+                icon={Zap}
+                title="Business Electricity"
+                description="Competitive electricity plans for businesses of all sizes with flexible contract lengths."
+                href="/electricity"
+                iconColor="bg-primary"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <ServiceCard
+                icon={Flame}
+                title="Business Gas"
+                description="Reliable gas supply with transparent pricing and exceptional customer service."
+                href="/gas"
+                iconColor="bg-accent"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <ServiceCard
+                icon={Droplet}
+                title="Business Water"
+                description="Streamlined water services for your business with competitive rates."
+                href="/water"
+                iconColor="bg-secondary"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <ServiceCard
+                icon={Leaf}
+                title="Green Energy"
+                description="100% renewable electricity and carbon-neutral gas to power your sustainable future."
+                href="/green-energy"
+                iconColor="bg-primary"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -130,48 +168,144 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
+          >
+            <div className="text-center">
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-4xl lg:text-5xl font-bold text-primary mb-2"
+              >
+                50K+
+              </motion.div>
+              <p className="text-sm text-muted-foreground font-medium">Happy Businesses</p>
+            </div>
+            <div className="text-center">
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-4xl lg:text-5xl font-bold text-primary mb-2"
+              >
+                £5M+
+              </motion.div>
+              <p className="text-sm text-muted-foreground font-medium">Annual Savings</p>
+            </div>
+            <div className="text-center">
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-4xl lg:text-5xl font-bold text-primary mb-2"
+              >
+                98%
+              </motion.div>
+              <p className="text-sm text-muted-foreground font-medium">Satisfaction Rate</p>
+            </div>
+            <div className="text-center">
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-4xl lg:text-5xl font-bold text-primary mb-2"
+              >
+                24hr
+              </motion.div>
+              <p className="text-sm text-muted-foreground font-medium">Response Time</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Why Choose Nationwide Energies?</h2>
             <p className="text-lg text-muted-foreground">
-              We're committed to providing exceptional service and competitive rates
+              We're committed to providing exceptional service and competitive rates. Our dedicated team works tirelessly to ensure your business gets the best energy deals available.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center" data-testid="feature-best-prices">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center"
+              data-testid="feature-best-prices"
+            >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <TrendingDown className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Best Prices</h3>
-              <p className="text-muted-foreground text-sm">Competitive rates that help your business save money</p>
-            </div>
+              <p className="text-muted-foreground text-sm">Competitive rates that help your business save money on energy costs every month</p>
+            </motion.div>
 
-            <div className="text-center" data-testid="feature-expert-support">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center"
+              data-testid="feature-expert-support"
+            >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Expert Support</h3>
-              <p className="text-muted-foreground text-sm">Dedicated team ready to help with any questions</p>
-            </div>
+              <p className="text-muted-foreground text-sm">Dedicated team ready to help with any questions, available during extended business hours</p>
+            </motion.div>
 
-            <div className="text-center" data-testid="feature-flexible-plans">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center"
+              data-testid="feature-flexible-plans"
+            >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Building2 className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Flexible Plans</h3>
-              <p className="text-muted-foreground text-sm">Tailored solutions for businesses of all sizes</p>
-            </div>
+              <p className="text-muted-foreground text-sm">Tailored solutions for businesses of all sizes, from startups to large corporations</p>
+            </motion.div>
 
-            <div className="text-center" data-testid="feature-trusted">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center"
+              data-testid="feature-trusted"
+            >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Trusted Partner</h3>
-              <p className="text-muted-foreground text-sm">Supporting over 50,000 businesses nationwide</p>
-            </div>
+              <p className="text-muted-foreground text-sm">Supporting over 50,000 businesses nationwide with reliable energy solutions</p>
+            </motion.div>
           </div>
         </div>
       </section>

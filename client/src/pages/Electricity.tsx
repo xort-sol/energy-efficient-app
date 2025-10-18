@@ -5,6 +5,7 @@ import { PlanCard } from "@/components/PlanCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Zap, Lock, TrendingUp, Leaf, Building2 } from "lucide-react";
+import electricityImage from "@assets/stock_images/electrical_power_lin_f1978aae.jpg";
 
 export default function Electricity() {
   return (
@@ -13,10 +14,12 @@ export default function Electricity() {
       
       <Hero
         title="Business Electricity Suppliers"
-        description="We're currently offering some of the best business electricity rates on the market. Get competitive commercial electricity plans bespoke to your business needs."
+        description="We're currently offering some of the best business electricity rates on the market. Get competitive commercial electricity plans bespoke to your business needs, with flexible contract lengths and transparent pricing."
         primaryCTA={{ text: "Get a Quote", href: "/quote" }}
         secondaryCTA={{ text: "Call 0333 323 3940", href: "tel:03333233940" }}
         badge="Best Rates Online"
+        backgroundImage={electricityImage}
+        enableParallax={true}
       />
 
       {/* Plans Section */}

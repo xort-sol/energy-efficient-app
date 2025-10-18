@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Target, Users, Award, TrendingUp, Shield, Heart } from "lucide-react";
+import aboutImage from "@assets/stock_images/professional_busines_7b1128e6.jpg";
 
 export default function About() {
   return (
@@ -12,9 +13,11 @@ export default function About() {
       
       <Hero
         title="About Nationwide Energies"
-        description="We're dedicated to providing businesses across the UK with competitive energy solutions that power growth and sustainability."
+        description="We're dedicated to providing businesses across the UK with competitive energy solutions that power growth and sustainability. Our expert team has been helping businesses reduce costs and meet sustainability goals for over a decade."
         primaryCTA={{ text: "Get a Quote", href: "/quote" }}
         secondaryCTA={{ text: "Contact Us", href: "/contact" }}
+        backgroundImage={aboutImage}
+        enableParallax={true}
       />
 
       {/* Mission Section */}

@@ -31,31 +31,23 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/electricity">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-electricity">
-                    Business Electricity
-                  </a>
+                <Link href="/electricity" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-electricity">
+                  Business Electricity
                 </Link>
               </li>
               <li>
-                <Link href="/gas">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-gas">
-                    Business Gas
-                  </a>
+                <Link href="/gas" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-gas">
+                  Business Gas
                 </Link>
               </li>
               <li>
-                <Link href="/water">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-water">
-                    Business Water
-                  </a>
+                <Link href="/water" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-water">
+                  Business Water
                 </Link>
               </li>
               <li>
-                <Link href="/green-energy">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-green">
-                    Green Energy
-                  </a>
+                <Link href="/green-energy" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-green">
+                  Green Energy
                 </Link>
               </li>
             </ul>
@@ -66,31 +58,23 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-about">
-                    About Us
-                  </a>
+                <Link href="/about" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-about">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/support">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-support">
-                    Support & FAQ
-                  </a>
+                <Link href="/support" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-support">
+                  Support & FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-contact">
-                    Contact Us
-                  </a>
+                <Link href="/contact" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-contact">
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/quote">
-                  <a className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-quote">
-                    Get a Quote
-                  </a>
+                <Link href="/quote" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground hover-elevate px-2 py-1 -ml-2 rounded-md inline-block transition-colors" data-testid="link-footer-quote">
+                  Get a Quote
                 </Link>
               </li>
             </ul>

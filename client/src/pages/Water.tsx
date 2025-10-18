@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Droplet, TrendingDown, FileText, Shield, Clock } from "lucide-react";
+import waterImage from "@assets/stock_images/water_treatment_plan_9b550a2f.jpg";
 
 export default function Water() {
   return (
@@ -12,10 +13,12 @@ export default function Water() {
       
       <Hero
         title="Business Water Suppliers"
-        description="Streamlined water services for your business with competitive rates and transparent billing. Switch your business water supply with confidence."
+        description="Streamlined water services for your business with competitive rates and transparent billing. Switch your business water supply with confidence and start saving on your water costs today."
         primaryCTA={{ text: "Get a Quote", href: "/quote" }}
         secondaryCTA={{ text: "Call 0333 323 3940", href: "tel:03333233940" }}
         badge="Competitive Water Rates"
+        backgroundImage={waterImage}
+        enableParallax={true}
       />
 
       {/* Benefits Section */}
