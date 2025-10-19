@@ -6,10 +6,14 @@ import { ProcessStep } from "@/components/ProcessStep";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Zap, Flame, Droplet, Leaf, Phone, Building2, TrendingDown, TrendingUp, Shield, Award, Users, Clock } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import heroImage from "@assets/stock_images/modern_office_building.jpg";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -26,13 +30,44 @@ export default function Home() {
       />
 
       {/* Business Energy Made Simple */}
-      <section className="py-16 lg:py-24 bg-background">
+      <motion.section 
+        style={{ y }}
+        className="py-16 lg:py-24 bg-background relative overflow-hidden"
+      >
+        {/* Floating Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 5, 0],
+            }}
+            transition={{ 
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-20 left-10 w-20 h-20 bg-primary/5 rounded-full blur-xl"
+          />
+          <motion.div
+            animate={{ 
+              y: [0, 15, 0],
+              rotate: [0, -3, 0],
+            }}
+            transition={{ 
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+            className="absolute top-40 right-20 w-16 h-16 bg-accent/10 rounded-full blur-lg"
+          />
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center max-w-4xl mx-auto mb-16"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
@@ -116,10 +151,13 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Overview */}
-      <section className="py-16 lg:py-24 bg-muted/30">
+      <motion.section 
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -30]) }}
+        className="py-16 lg:py-24 bg-muted/30 relative overflow-hidden"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -263,7 +301,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Energy Health Check Section */}
       <section className="py-16 lg:py-24 bg-background">
@@ -747,9 +785,18 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-secondary text-secondary-foreground">
+      <motion.section 
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -20]) }}
+        className="py-16 lg:py-20 bg-secondary text-secondary-foreground relative overflow-hidden"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-3xl mx-auto text-center"
+          >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Ready to Switch Your Business Energy?
             </h2>
@@ -769,9 +816,9 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>
